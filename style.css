@@ -1,0 +1,267 @@
+/* ---------- General Styles ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* Gradient background */
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+}
+
+/* ---------- Calculator Card ---------- */
+.card {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.8s ease;
+}
+
+/* Card entrance animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  color: #4a3aa7;
+  font-size: 32px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #777;
+  margin: 5px 0 25px;
+}
+
+/* ---------- Input Fields ---------- */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+}
+
+/* ---------- Error Message ---------- */
+.error {
+  color: #e53935;
+  font-weight: 600;
+  text-align: center;
+  min-height: 20px;
+  margin-bottom: 10px;
+}
+
+/* Shake animation for errors */
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* ---------- Buttons ---------- */
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calculate {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.reset {
+  background: #eee;
+  color: #444;
+}
+
+/* Hover and click effects */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Result Section ---------- */
+.result {
+  text-align: center;
+  margin-top: 25px;
+  padding: 20px;
+  background: #f6f4ff;
+  border-radius: 15px;
+  animation: fadeIn 0.6s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-title {
+  color: #777;
+}
+
+#bmiValue {
+  font-size: 60px;
+  color: #4a3aa7;
+}
+
+.category {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.message {
+  color: #555;
+}
+
+/* Category text colors (added by JavaScript) */
+.color-under { color: #2196f3; }
+.color-normal { color: #2e9e4f; }
+.color-over { color: #f39c12; }
+.color-obese { color: #e53935; }
+
+/* ---------- BMI Scale ---------- */
+.scale {
+  display: flex;
+  margin-top: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.scale-box {
+  flex: 1;
+  text-align: center;
+  padding: 10px 2px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.under { background: #2196f3; }
+.normal { background: #2e9e4f; }
+.over { background: #f39c12; }
+.obese { background: #e53935; }
+
+/* Highlight the active category */
+.scale-box.active {
+  opacity: 1;
+  transform: scale(1.12);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Formula Section ---------- */
+.formula {
+  margin-top: 25px;
+  padding: 15px;
+  background: #fff8e1;
+  border-left: 5px solid #f39c12;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.formula h3 {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.formula-text {
+  font-weight: bold;
+  color: #4a3aa7;
+  margin-bottom: 5px;
+}
+
+.disclaimer {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 480px) {
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  #bmiValue {
+    font-size: 48px;
+  }
+
+  .scale-box {
+    font-size: 10px;
+  }
+}

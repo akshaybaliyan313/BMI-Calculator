@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Heading -->
+    <h1>⚖️ BMI Calculator</h1>
+    <p class="subtitle">Know your body, understand your health.</p>
+
+    <!-- Input section -->
+    <div class="input-group">
+      <label for="height">📏 Height (cm)</label>
+      <input type="number" id="height" placeholder="e.g. 170">
+    </div>
+
+    <div class="input-group">
+      <label for="weight">🏋️ Weight (kg)</label>
+      <input type="number" id="weight" placeholder="e.g. 65">
+    </div>
+
+    <!-- Error message -->
+    <p id="error" class="error"></p>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button id="calcBtn" class="btn calculate">Calculate BMI</button>
+      <button id="resetBtn" class="btn reset">Reset</button>
+    </div>
+
+    <!-- Result section (hidden until calculation) -->
+    <div id="result" class="result hidden">
+      <p class="result-title">Your BMI is</p>
+      <h2 id="bmiValue">0.0</h2>
+      <p id="category" class="category"></p>
+      <p id="message" class="message"></p>
+    </div>
+
+    <!-- BMI Scale -->
+    <div class="scale">
+      <div id="underweight" class="scale-box under">Underweight<br><small>&lt; 18.5</small></div>
+      <div id="normal" class="scale-box normal">Normal<br><small>18.5 - 24.9</small></div>
+      <div id="overweight" class="scale-box over">Overweight<br><small>25 - 29.9</small></div>
+      <div id="obese" class="scale-box obese">Obese<br><small>30+</small></div>
+    </div>
+
+    <!-- Formula section -->
+    <div class="formula">
+      <h3>📘 How to Calculate BMI</h3>
+      <p class="formula-text">BMI = Weight (kg) / (Height (m) × Height (m))</p>
+      <p>Example: 65 kg and 170 cm (1.70 m) → 65 / (1.70 × 1.70) = 22.5</p>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="disclaimer">
+      ⚠️ BMI is a general screening measure for adults and is not a medical diagnosis.
+      Please consult a doctor for health advice.
+    </p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
